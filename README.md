@@ -1,4 +1,3 @@
-# Qyuki-Assignment
 
 Install first using
 $ npm install
