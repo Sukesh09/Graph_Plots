@@ -43,7 +43,7 @@ const colorLegend = (selection, props) => {
     
     const yValue = d => d.Population;
     const yAxisLabel = 'Population(Million)';
-    
+    const circleRadius = 10;
     const colorValue = d => d.Country;
     
     const margin = { top: 60, right: 160, bottom: 88, left: 105 };
@@ -121,7 +121,14 @@ const colorLegend = (selection, props) => {
         .attr('class', 'line-path')
         .attr('d', d => lineGenerator(d.values))
         .attr('stroke', d => colorScale(d.key));
-    
+
+   /*   g.selectAll('circle').data(data)
+      .enter().append('circle')
+        .attr('cy', d => yScale(yValue(d)))
+        .attr('cx', d => xScale(xValue(d)))
+        .attr('r', circleRadius)
+        .attr('stroke', d => colorScale(d.key)); */
+
     g.append('text')
         .attr('class', 'title')
         .attr('y', -10)
